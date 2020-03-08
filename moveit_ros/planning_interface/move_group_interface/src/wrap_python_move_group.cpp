@@ -67,7 +67,7 @@ public:
   // ROSInitializer is constructed first, and ensures ros::init() was called, if
   // needed
   MoveGroupInterfaceWrapper(const std::string& group_name, const std::string& robot_description,
-                            const std::string& ns = "", double wait_for_servers = 5.0)
+                            const std::string& ns = "", double wait_for_servers = 20.0)
     : py_bindings_tools::ROScppInitializer()
     , MoveGroupInterface(Options(group_name, robot_description, ros::NodeHandle(ns)),
                          std::shared_ptr<tf2_ros::Buffer>(), ros::WallDuration(wait_for_servers))
